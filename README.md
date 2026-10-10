@@ -1,16 +1,24 @@
 # 🧠 Health Analytics & Awareness Lab
 
-A portfolio workspace combining a health-awareness web application with reproducible machine-learning experiments for structured health-risk datasets.
+A portfolio workspace combining a health-awareness frontend with reproducible analytics and machine-learning studies.
 
-## Projects in this repository
-- **Health Awareness App** — existing frontend application in `health-awareness-app/`.
-- **Customer Churn ML** — end-to-end classification demo in `customer-churn-ml/` using generated demo data, preprocessing, model comparison and evaluation.
+## 🚀 Project collection
+| Project | Focus | Stack |
+|---|---|---|
+| Health Awareness App | Responsive healthcare-awareness UI | HTML, CSS, JavaScript |
+| Customer Churn ML | Classification + model comparison | Python, Pandas, Scikit-learn |
+| Sales Analytics Engine | KPI, category, store and trend analysis | Python, Pandas, NumPy |
+| Cognitive Risk Classification | PCA + classification workflow | Python, Scikit-learn |
 
-## Tech Stack
-`Python` `Pandas` `NumPy` `Scikit-learn` `HTML` `CSS` `JavaScript`
+## 🧪 Engineering practices demonstrated
+- Reproducible random seeds
+- Train/test separation and preprocessing pipelines
+- Model comparison with precision, recall and F1
+- Structured analytics outputs and CSV export
+- Clear documentation and runnable requirements
 
-## Important note
-The machine-learning examples use synthetic/demo data and are educational. They are not medical advice or production clinical systems.
+## 📜 Certificates
+See [`certificates/README.md`](certificates/README.md) for the credential index. Original certificate files will be added only when the source files are available.
 
-## Certificates
-A certificate index is maintained separately from source code. Only certificates actually available as files will be uploaded; no credential is fabricated.
+## ⚠️ Data & health disclaimer
+ML experiments use synthetic/demo data and are educational. They are not medical advice, clinical validation, or production healthcare systems.
