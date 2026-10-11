@@ -1,0 +1,13 @@
+{
+  "dataset": {
+    "samples": 1600,
+    "features": 24,
+    "test_size": 0.2,
+    "random_state": 42
+  },
+  "models": [
+    {"model":"PCA + Logistic Regression","accuracy":0.8,"precision":0.7790697674,"recall":0.8375,"f1":0.8072289157,"confusion_matrix":[[122,38],[26,134]]},
+    {"model":"Random Forest","accuracy":0.91875,"precision":0.91875,"recall":0.91875,"f1":0.91875,"confusion_matrix":[[147,13],[13,147]]},
+    {"model":"Gradient Boosting","accuracy":0.925,"precision":0.925,"recall":0.925,"f1":0.925,"confusion_matrix":[[148,12],[12,148]]}
+  ]
+}
