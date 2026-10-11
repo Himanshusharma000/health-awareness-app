@@ -6,33 +6,49 @@ A lightweight Python analytics workflow that generates a synthetic retail-sales 
 
 ## 🎯 Objective
 
-Demonstrate a compact analytics workflow from raw transaction-like records to decision-friendly summary metrics.
+Demonstrate a compact analytics workflow from transaction-like records to decision-friendly summary metrics and machine-readable outputs.
 
-## 📈 Outputs
+## 📈 Executive Snapshot
 
-- Total revenue
-- Units sold
-- Order count
-- Average order value
-- Revenue by category
-- Revenue by store/region
-- Monthly revenue CSV export
+The current deterministic synthetic run produces:
+
+| KPI | Value |
+|---|---:|
+| Revenue | **$1,094,590.14** |
+| Units | 9,903 |
+| Orders | 2,500 |
+| Average order value | $437.84 |
+| Top category | Sports |
+| Top store/region | West |
+
+![Monthly revenue](results/monthly-revenue.svg)
+
+The complete KPI payload is available in [`results/kpi-summary.json`](results/kpi-summary.json).
 
 ## 🔬 Workflow
 
 ```text
 Generate transaction data
         ↓
-Create revenue metrics
+Create gross sales + discounted revenue
         ↓
 Derive monthly period
         ↓
-Aggregate KPIs
+Aggregate executive KPIs
         ↓
 Compare categories and stores
         ↓
-Export monthly revenue
+Export CSV + JSON outputs
 ```
+
+## 🧠 Analytics Skills Demonstrated
+
+- KPI definition and aggregation
+- Revenue and average-order-value calculation
+- Category and regional performance comparison
+- Monthly trend analysis
+- Reproducible synthetic-data generation
+- CSV/JSON output for downstream reporting or BI tools
 
 ## 🛠️ Tech Stack
 
@@ -46,7 +62,7 @@ python -m pip install -r requirements.txt
 python analyze.py
 ```
 
-A `monthly_revenue.csv` file is generated in the working directory.
+The script refreshes `results/monthly_revenue.csv` and `results/kpi-summary.json`.
 
 ## 📁 Structure
 
@@ -54,6 +70,9 @@ A `monthly_revenue.csv` file is generated in the working directory.
 sales-analytics/
 ├── analyze.py
 ├── requirements.txt
+├── results/
+│   ├── kpi-summary.json
+│   └── monthly-revenue.svg
 └── README.md
 ```
 
@@ -62,3 +81,4 @@ sales-analytics/
 - Sales records are synthetic.
 - No real company, customer or financial performance is represented.
 - The workflow focuses on core aggregation/reporting rather than a production BI pipeline.
+- Revenue is a simulated metric, not audited financial data.
