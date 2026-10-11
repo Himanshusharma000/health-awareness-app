@@ -30,7 +30,7 @@ Accuracy / Precision / Recall / F1
 - Random Forest
 - Gradient Boosting
 
-The implementation uses fixed random seeds for reproducible runs. The training script currently generates 1,600 samples with 24 features and evaluates the models on a held-out test set. fileciteturn36file0L2-L2
+The training script uses fixed random seeds and generates 1,600 samples with 24 features before evaluating the models on a held-out test set.
 
 ## 🛠️ Tech Stack
 
