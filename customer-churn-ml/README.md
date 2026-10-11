@@ -1,26 +1,60 @@
 # 📉 Customer Churn Prediction
 
-An end-to-end machine-learning classification project demonstrating preprocessing, feature engineering, model training and evaluation on reproducible synthetic customer data.
+A reproducible classification study that generates a synthetic customer dataset and compares multiple models for predicting churn.
+
+> **Dataset note:** The customer records are synthetically generated for portfolio/learning purposes. They are not sourced from a real company or customer database.
+
+## 🎯 Objective
+
+Identify customer characteristics associated with churn and compare baseline classification models using standard evaluation metrics.
 
 ## 🔬 Workflow
 
-1. Generate a reproducible demo dataset
-2. Split data into train/test sets
-3. Scale numeric features
-4. Train Logistic Regression, Random Forest and Gradient Boosting models
-5. Compare accuracy, precision, recall and F1
-6. Print a classification report and confusion matrix
+```text
+Synthetic customer data
+        ↓
+Feature preparation + one-hot encoding
+        ↓
+Stratified train/test split
+        ↓
+Model training
+        ↓
+Accuracy / Precision / Recall / F1
+        ↓
+Model comparison
+```
+
+## 🤖 Models
+
+- Logistic Regression with feature scaling
+- Random Forest
+- Gradient Boosting
+
+The script generates 1,500 records and uses a fixed random seed for reproducibility.
+
+## 📊 Features
+
+- Age
+- Tenure in months
+- Monthly charge
+- Support tickets
+- Usage score
+- Contract type
+- Churn target
 
 ## 🛠️ Tech Stack
 
-`Python` `Pandas` `NumPy` `Scikit-learn`
+`Python` `Pandas` `NumPy` `Scikit-learn` `Logistic Regression` `Random Forest` `Gradient Boosting`
 
 ## 🚀 Run Locally
 
 ```bash
-pip install -r requirements.txt
+cd customer-churn-ml
+python -m pip install -r requirements.txt
 python train.py
 ```
+
+The script prints classification reports and a model-comparison table sorted by F1-score.
 
 ## 📁 Structure
 
@@ -31,6 +65,8 @@ customer-churn-ml/
 └── README.md
 ```
 
-## ⚠️ Transparency
+## 📌 Limitations
 
-The dataset is synthetic and intended for portfolio/learning purposes. Metrics are generated when the script runs and are not presented as real-world business results.
+- Synthetic data is used instead of real customer records.
+- Model performance is illustrative and should not be treated as production performance.
+- No claim is made that the generated relationships represent any specific business.
