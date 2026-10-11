@@ -1,13 +1,15 @@
 {
-  "name": "backend",
+  "name": "health-awareness-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "REST API for the Health Awareness portfolio application",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "seed": "node seed.js",
+    "test": "echo \"No automated tests configured yet\""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["nodejs", "express", "mongodb", "health-awareness", "rest-api"],
+  "author": "Himanshu Sharma",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
