@@ -1,5 +1,5 @@
 {
-  "name": "health-awareness-api",
+  "name": "backend",
   "version": "1.0.0",
   "description": "REST API for the Health Awareness portfolio application",
   "main": "server.js",
