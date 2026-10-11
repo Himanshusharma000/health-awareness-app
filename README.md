@@ -18,9 +18,9 @@ I’m a 4th-year Data Science student focused on turning raw data into **insight
 | [Customer Churn Prediction](customer-churn-ml/) | Machine Learning | Python, Pandas, Scikit-learn | Classification, feature preparation, evaluation |
 | [Sales Analytics](sales-analytics/) | Analytics | Python, Pandas, NumPy | KPI generation, category/store analysis, monthly reporting |
 | [Health Awareness App](health-awareness-app/) | Full Stack | React, Node.js, Express, MongoDB, Docker | UI, REST API, database integration, containerization |
-| [LIBTrack](../Library-management-system) | Python / SQL | Python, SQLite | CRUD workflows, relational data, issue/return tracking |
-| [Pediatric HMS](../hospital-management-system) | Frontend | HTML, CSS, JavaScript | Responsive healthcare workflow interface |
-| [Smart Task Manager](../todo-app) | Frontend | HTML, CSS, JavaScript | DOM logic, filtering, localStorage |
+| [LIBTrack](https://github.com/Himanshusharma000/Library-management-system) | Python / SQL | Python, SQLite | CRUD workflows, relational data, issue/return tracking |
+| [Pediatric HMS](https://github.com/Himanshusharma000/hospital-management-system) | Frontend | HTML, CSS, JavaScript | Responsive healthcare workflow interface |
+| [Smart Task Manager](https://github.com/Himanshusharma000/todo-app) | Frontend | HTML, CSS, JavaScript | DOM logic, filtering, localStorage |
 
 ## 🧠 Data & ML Skills
 
