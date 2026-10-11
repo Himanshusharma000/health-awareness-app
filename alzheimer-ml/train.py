@@ -1,20 +1,24 @@
-"""Synthetic classification study with PCA and model comparison."""
+"""Synthetic classification study with PCA, model comparison and saved results."""
+
+import json
+from pathlib import Path
 
 import numpy as np
 from sklearn.datasets import make_classification
 from sklearn.decomposition import PCA
 from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, precision_recall_fscore_support
+from sklearn.metrics import accuracy_score, confusion_matrix, precision_recall_fscore_support
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 RANDOM_STATE = 42
+OUTPUT_DIR = Path(__file__).parent / "results"
 
 
 def main():
-    """Generate data, train models and print evaluation metrics."""
+    """Generate data, train models, print metrics and save reproducible results."""
     X, y = make_classification(
         n_samples=1600,
         n_features=24,
@@ -42,16 +46,39 @@ def main():
         "Gradient Boosting": GradientBoostingClassifier(random_state=RANDOM_STATE),
     }
 
+    results = []
     for name, model in models.items():
         model.fit(X_train, y_train)
         predictions = model.predict(X_test)
         precision, recall, f1, _ = precision_recall_fscore_support(
             y_test, predictions, average="binary", zero_division=0
         )
+        row = {
+            "model": name,
+            "accuracy": accuracy_score(y_test, predictions),
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+            "confusion_matrix": confusion_matrix(y_test, predictions).tolist(),
+        }
+        results.append(row)
         print(
-            f"{name}: accuracy={accuracy_score(y_test, predictions):.3f}, "
+            f"{name}: accuracy={row['accuracy']:.3f}, "
             f"precision={precision:.3f}, recall={recall:.3f}, f1={f1:.3f}"
         )
+
+    OUTPUT_DIR.mkdir(exist_ok=True)
+    payload = {
+        "dataset": {
+            "samples": int(len(X)),
+            "features": int(X.shape[1]),
+            "test_size": 0.20,
+            "random_state": RANDOM_STATE,
+        },
+        "models": results,
+    }
+    (OUTPUT_DIR / "model-results.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    print(f"Saved {OUTPUT_DIR / 'model-results.json'}")
 
 
 if __name__ == "__main__":
