@@ -2,63 +2,63 @@
 
 > **Data Science • Machine Learning • Data Analytics • Python • SQL • Full Stack**
 
-Welcome to my GitHub portfolio. This repository is the central hub for practical projects built around data analysis, machine learning, business-focused problem solving, and full-stack development.
+A portfolio hub containing practical work across machine learning, analytics, databases, and web development.
 
-## 👨‍💻 About Me
+## 👨‍💻 About
 
-I am a Data Science student focused on turning data into useful insights and working solutions. My core interests include exploratory data analysis, machine learning, dashboard-driven analytics, Python development, SQL, and full-stack applications.
+I’m a 4th-year Data Science student focused on turning raw data into **insights, models, and usable applications**. I build projects around a reproducible workflow:
 
-I prefer projects that show the complete workflow: **problem → data → preprocessing → analysis/model → evaluation → usable result**.
+**Problem → Data → Cleaning → Analysis → Modeling → Evaluation → Result**
 
-## ⭐ Featured Projects
+## ⭐ Featured Work
 
-| Project | Area | Stack | Highlights |
+| Project | Area | Stack | What it demonstrates |
 |---|---|---|---|
-| 🧠 Cognitive Risk Classification | Machine Learning | Python, Scikit-learn, PCA | Preprocessing, dimensionality reduction, model comparison |
-| 📉 Customer Churn Prediction | Machine Learning | Python, Pandas, Scikit-learn | Classification pipeline and evaluation metrics |
-| ❤️ Health Awareness App | Full Stack | React, Node.js, Express, MongoDB, Docker | Responsive UI, REST API, database and containerization |
-| 📚 LIBTrack — Library Management | Python / Database | Python, SQLite, SQL | CRUD, issue/return workflow and history tracking |
-| 🏥 Pediatric Hospital Management | Frontend | HTML, CSS, JavaScript | Responsive healthcare workflow interface |
-| ✅ Smart Task Manager | Frontend | HTML, CSS, JavaScript | Task management with localStorage |
+| [Cognitive Risk Classification](alzheimer-ml/) | Machine Learning | Python, Scikit-learn, PCA | Preprocessing, dimensionality reduction, model comparison |
+| [Customer Churn Prediction](customer-churn-ml/) | Machine Learning | Python, Pandas, Scikit-learn | Classification, feature preparation, evaluation |
+| [Sales Analytics](sales-analytics/) | Analytics | Python, Pandas, NumPy | KPI generation, category/store analysis, monthly reporting |
+| [Health Awareness App](health-awareness-app/) | Full Stack | React, Node.js, Express, MongoDB, Docker | UI, REST API, database integration, containerization |
+| [LIBTrack](../Library-management-system) | Python / SQL | Python, SQLite | CRUD workflows, relational data, issue/return tracking |
+| [Pediatric HMS](../hospital-management-system) | Frontend | HTML, CSS, JavaScript | Responsive healthcare workflow interface |
+| [Smart Task Manager](../todo-app) | Frontend | HTML, CSS, JavaScript | DOM logic, filtering, localStorage |
 
-## 🧠 Data Science & ML Skills
+## 🧠 Data & ML Skills
 
 - Exploratory Data Analysis (EDA)
 - Data cleaning and preprocessing
 - Feature engineering
-- PCA and dimensionality reduction
+- PCA / dimensionality reduction
 - Classification and model comparison
-- Accuracy, precision, recall and F1 evaluation
+- Accuracy, precision, recall and F1-score
 - Data visualization and analytical reporting
 - Python, Pandas, NumPy, Matplotlib and Seaborn
 - Scikit-learn and XGBoost workflows
-- SQL and database fundamentals
+- SQL and relational databases
 
 ## 🛠️ Technology Stack
 
 **Languages:** Python, SQL, Java, C++, C#, JavaScript  
-**Data & Analytics:** Pandas, NumPy, Matplotlib, Seaborn, Excel, Power BI, EDA  
+**Analytics:** Pandas, NumPy, Matplotlib, Seaborn, Excel, Power BI, EDA  
 **Machine Learning:** Scikit-learn, XGBoost, PCA, Logistic Regression, Random Forest  
 **Web:** HTML, CSS, Bootstrap, JavaScript, Node.js, React.js, Express.js  
 **Databases:** MySQL, MongoDB, SQLite  
-**Dev Tools:** Git, GitHub, VS Code, Docker
+**Tools:** Git, GitHub, VS Code, Docker
 
-## 📂 Repository Structure
+## 📂 Repository Map
 
 ```text
 health-awareness-app/
-├── alzheimer-ml/              # ML classification + PCA study
-├── customer-churn-ml/          # Customer churn classification workflow
-├── health-awareness-app/       # React + Node + MongoDB full-stack app
-├── certificates/               # Certificate index and credential notes
+├── alzheimer-ml/              # Synthetic classification + PCA study
+├── customer-churn-ml/          # Synthetic churn classification study
+├── sales-analytics/            # KPI and sales-analysis workflow
+├── health-awareness-app/       # React + Node + MongoDB application
+├── certificates/               # Credential index
 └── README.md                   # Portfolio hub
 ```
 
 ## 📜 Certifications & Learning
 
-The [`certificates/`](certificates/) folder contains the credential index. Credentials are only presented as certificate files when the original source material is available and verifiable.
-
-Current CV-listed credentials include:
+The [`certificates/`](certificates/) folder contains the current credential index. Certificates are listed conservatively and are not presented as professional experience.
 
 - MERN Stack, DevOps & Cloud Computing — CipherSchools
 - Cloud Computing — NPTEL / IIT Kharagpur
@@ -72,13 +72,13 @@ Current CV-listed credentials include:
 - **Reproducible workflows over unexplained results**
 - **Synthetic/demo datasets are clearly labelled**
 - **No fabricated experience, credentials, metrics or ownership claims**
-- Each project should have a clear README, setup instructions and an understandable project structure.
+- Each project should explain its purpose, stack, setup and limitations.
 
 ## 📫 Connect
 
 - **LinkedIn:** [linkedin.com/in/himanshuu24](https://linkedin.com/in/himanshuu24)
 - **GitHub:** [github.com/Himanshusharma000](https://github.com/Himanshusharma000)
-- **Email:** himanshusharma10802@gmail.com
+- **Email:** `himanshusharma10802@gmail.com`
 
 ---
 
