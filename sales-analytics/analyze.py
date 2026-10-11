@@ -1,10 +1,14 @@
-"""Generate a synthetic retail dataset and report business KPIs."""
+"""Generate a synthetic retail dataset and export business KPI summaries."""
+
+import json
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 
 RANDOM_STATE = 7
-OUTPUT_FILE = "monthly_revenue.csv"
+OUTPUT_DIR = Path(__file__).parent / "results"
+OUTPUT_FILE = OUTPUT_DIR / "monthly_revenue.csv"
 
 
 def build_dataset(n=2500):
@@ -34,8 +38,18 @@ def build_dataset(n=2500):
 
 
 def main():
-    """Generate KPI summaries and export monthly revenue."""
+    """Generate KPI summaries and export machine-readable outputs."""
     df = build_dataset()
+    OUTPUT_DIR.mkdir(exist_ok=True)
+
+    category_summary = (
+        df.groupby("category")
+        .agg(revenue=("revenue", "sum"), units=("quantity", "sum"))
+        .sort_values("revenue", ascending=False)
+        .round(2)
+    )
+    store_summary = df.groupby("store")["revenue"].sum().sort_values(ascending=False).round(2)
+    monthly = df.groupby("month", as_index=False)["revenue"].sum().round(2)
 
     print("\nEXECUTIVE KPIs")
     print(f"Revenue: ${df['revenue'].sum():,.2f}")
@@ -44,19 +58,28 @@ def main():
     print(f"Average order value: ${df['revenue'].mean():,.2f}")
 
     print("\nCATEGORY PERFORMANCE")
-    print(
-        df.groupby("category")
-        .agg(revenue=("revenue", "sum"), units=("quantity", "sum"))
-        .sort_values("revenue", ascending=False)
-        .round(2)
-    )
+    print(category_summary)
 
     print("\nSTORE PERFORMANCE")
-    print(df.groupby("store")["revenue"].sum().sort_values(ascending=False).round(2))
+    print(store_summary)
 
-    monthly = df.groupby("month", as_index=False)["revenue"].sum()
     monthly.to_csv(OUTPUT_FILE, index=False)
+
+    payload = {
+        "dataset": {"transactions": len(df), "period": "2025", "random_state": RANDOM_STATE},
+        "kpis": {
+            "revenue": float(df["revenue"].sum()),
+            "units": int(df["quantity"].sum()),
+            "orders": int(len(df)),
+            "average_order_value": float(df["revenue"].mean()),
+        },
+        "top_category_by_revenue": category_summary.index[0],
+        "top_store_by_revenue": store_summary.index[0],
+        "monthly_revenue": dict(zip(monthly["month"], monthly["revenue"])),
+    }
+    (OUTPUT_DIR / "kpi-summary.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
     print(f"\nSaved {OUTPUT_FILE}")
+    print(f"Saved {OUTPUT_DIR / 'kpi-summary.json'}")
 
 
 if __name__ == "__main__":
