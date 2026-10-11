@@ -1,17 +1,18 @@
 # 📜 Certificates & Learning Credentials
 
-This folder is the portfolio certificate index. Original certificate files are added only when the source file is available and verifiable.
+A structured index of certificates and learning credentials referenced in my portfolio. Original certificate files are added only when the source material is actually available and verifiable.
 
-## ✅ Verified source material available
+## ✅ Verified Certificate Source Material
 
 ### Computational Theory: Language Principle & Finite Automata Theory
-- **Provider:** Infosys Springboard
+
+- **Issuer:** Infosys Springboard
 - **Completed:** August 2, 2025
 - **Issued:** October 10, 2026
-- **Focus:** Formal languages, principles of computation and finite automata theory.
-- **Verification:** Original certificate includes an Infosys Springboard verification QR code.
+- **Focus:** Formal languages, principles of computation and finite automata theory
+- **Verification:** Original certificate contains an Infosys Springboard verification QR code
 
-## 📌 Credentials listed on the current CV
+## 📚 Portfolio Credential Index
 
 | Credential | Issuer | Date | Focus |
 |---|---|---|---|
@@ -21,5 +22,6 @@ This folder is the portfolio certificate index. Original certificate files are a
 | Introduction to Hardware and Operating Systems | IBM / Coursera | Oct 2024 | Hardware and operating-system fundamentals |
 | Build-a-Thon Hackathon Participation | Build-a-Thon | Apr 2024 | Hackathon / project collaboration |
 
-### 🔐 Authenticity rule
-The index may mention credentials from the CV, but **no certificate image/PDF is claimed as uploaded unless the original source file is actually available**. This keeps the portfolio interview-safe and avoids fabricated credentials.
+## 🔐 Authenticity Rule
+
+This index may mention credentials listed on my CV, but **no certificate image or PDF is claimed as uploaded unless the original source file is available**. This keeps the portfolio accurate, verifiable and interview-safe.
