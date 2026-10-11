@@ -1,63 +1,68 @@
-# Health Awareness App
+# ❤️ Health Awareness App
 
-A full-stack, containerized web application designed to track and spread health awareness.
+A full-stack web application for presenting health information through a responsive React interface backed by a Node.js/Express API and MongoDB database.
 
-## Tech Stack
-- **Frontend**: React (Vite), Tailwind CSS, Framer Motion, React Router Dom
-- **Backend**: Node.js, Express, Mongoose
-- **Database**: MongoDB
-- **Containerization**: Docker, Docker Compose
+## ✨ Features
 
-## Features
-- Complete multi-page React structure with Home, Articles, BMI Calculator, and Contact sections.
-- Animated, visually stunning, fully responsive UI.
-- Secure backend API to handle fetching curated articles and validating user subscriptions.
-- MongoDB persistent data storage and automatic databse seeding for quick setup.
-- Comprehensive multiple-container setups ready with Docker Compose.
+- Multi-page React UI with Home, Articles, BMI Calculator and Contact sections
+- Responsive interface with animations and client-side routing
+- REST API for curated health articles and subscriptions
+- MongoDB persistence with seed data for quick setup
+- Docker and Docker Compose configuration for multi-container development
+- Environment-variable based configuration
 
-## Project Structure
-```bash
-/health-awareness-app
-  /frontend     # React web UI
-  /backend      # Node/Express API
-  docker-compose.yml 
-  README.md     
-  .env.example  
+## 🛠️ Tech Stack
+
+**Frontend:** React, Vite, Tailwind CSS, Framer Motion, React Router  
+**Backend:** Node.js, Express, Mongoose  
+**Database:** MongoDB  
+**DevOps:** Docker, Docker Compose
+
+## 📁 Project Structure
+
+```text
+health-awareness-app/
+├── frontend/          # React/Vite client
+├── backend/           # Node/Express API
+├── docker-compose.yml
+├── .env.example
+└── README.md
 ```
 
-## Running Locally Using Docker
+## 🚀 Run with Docker
 
-1. **Prerequisites**: Make sure you have [Docker Desktop](https://www.docker.com/products/docker-desktop) installed.
-2. Clone this repository (or navigate to this folder).
-3. To start using Docker, run step 4 on your terminal.
-4. Execute:
-   ```bash
-   docker-compose up --build
-   ```
-5. Once started, open your browser and navigate to:
-   - **Frontend UI**: http://localhost:3000
-   - **Backend API**: http://localhost:5000
-   
-Note: The database seed will automatically trigger and provide health articles out of the box when the backend connects to MongoDB.
+Prerequisite: Docker Desktop.
 
-## Running Locally Without Docker
+```bash
+docker-compose up --build
+```
 
-1. **Prerequisites**: Node.js and MongoDB installed locally.
-2. In the `backend` folder, install dependencies:
-   ```bash
-   cd backend
-   npm install
-   ```
-3. Run the backend (API will be available at http://localhost:5000):
-   ```bash
-   node server.js
-   ```
-4. In another terminal, go to the `frontend` folder and install dependencies:
-   ```bash
-   cd frontend
-   npm install
-   ```
-5. Start the frontend development server (UI available at http://localhost:5173):
-   ```bash
-   npm run dev
-   ```
+Then open the frontend at `http://localhost:3000` and the API at `http://localhost:5000` according to the current container configuration.
+
+## 💻 Run Without Docker
+
+### Backend
+
+```bash
+cd backend
+npm install
+node server.js
+```
+
+### Frontend
+
+In a second terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The Vite development server will display its local URL in the terminal.
+
+## 🔐 Configuration
+
+Copy `.env.example` to `.env` and provide the required MongoDB connection settings before starting the backend.
+
+> Portfolio project for demonstrating full-stack development, REST APIs, database integration and containerized application setup.
