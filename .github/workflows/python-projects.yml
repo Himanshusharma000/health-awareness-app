@@ -37,6 +37,20 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r ${{ matrix.project }}/requirements.txt
 
+      - name: Compile Python files
+        working-directory: ${{ matrix.project }}
+        run: python -m compileall -q .
+
       - name: Run project
         working-directory: ${{ matrix.project }}
         run: python ${{ matrix.project == 'sales-analytics' && 'analyze.py' || 'train.py' }}
+
+      - name: Verify exported results
+        shell: bash
+        run: |
+          if [[ "${{ matrix.project }}" == "sales-analytics" ]]; then
+            test -f sales-analytics/results/kpi-summary.json
+            test -f sales-analytics/results/monthly_revenue.csv
+          else
+            test -f "${{ matrix.project }}/results/model-results.json"
+          fi
