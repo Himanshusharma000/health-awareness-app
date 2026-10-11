@@ -2,23 +2,24 @@
 
 A full-stack web application for presenting health information through a responsive React interface backed by a Node.js/Express API and MongoDB database.
 
-> **Portfolio project:** Demonstrates frontend development, REST APIs, database integration, validation and containerized development. It is not a medical diagnosis or treatment system.
+> **Portfolio project:** Demonstrates frontend development, REST APIs, database integration, validation, CI checks and containerized development. It is not a medical diagnosis or treatment system.
 
 ## ✨ Features
 
 - Multi-page React UI with Home, Articles, BMI Calculator and Contact sections
 - Responsive interface with animations and client-side routing
-- REST API for health articles and subscriptions
+- REST API for health articles, subscriptions and service health checks
 - MongoDB persistence with seed data for local development
 - Environment-variable based configuration
 - Docker and Docker Compose setup
+- Automated frontend lint/build and backend syntax checks through GitHub Actions
 
 ## 🛠️ Tech Stack
 
 **Frontend:** React, Vite, Tailwind CSS, Framer Motion, React Router  
 **Backend:** Node.js, Express, Mongoose, express-validator  
 **Database:** MongoDB  
-**DevOps:** Docker, Docker Compose
+**DevOps:** Docker, Docker Compose, GitHub Actions
 
 ## 🏗️ Architecture
 
@@ -33,6 +34,8 @@ Node.js + Express API
         ▼
      MongoDB
 ```
+
+The backend exposes a lightweight `GET /api/health` endpoint that can be used for service health checks without requiring a database query.
 
 ## 📁 Project Structure
 
@@ -84,6 +87,15 @@ npm run dev
 
 Vite prints the frontend development URL in the terminal.
 
+### Backend validation check
+
+```bash
+cd backend
+npm test
+```
+
+This runs Node's syntax checker against the server and API routes without requiring MongoDB.
+
 ## 🔐 Configuration
 
 Copy the environment template and configure MongoDB before starting the backend:
@@ -94,12 +106,13 @@ cp .env.example .env
 
 Never commit real credentials, connection strings or secrets.
 
-## 🧪 Development Notes
+## 🧪 Development & CI
 
 - Backend API routes are grouped under `/api`.
 - MongoDB models live under `backend/models/`.
 - Seed data is provided for local/demo setup.
 - The frontend is independently runnable with Vite.
+- GitHub Actions runs backend checks plus frontend lint/build on changes to the web application.
 
 ## 📌 Limitations
 
