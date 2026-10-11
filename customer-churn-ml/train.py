@@ -1,4 +1,7 @@
-"""Synthetic customer churn modeling and evaluation."""
+"""Synthetic customer churn modeling with evaluation exports."""
+
+import json
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -7,15 +10,18 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     accuracy_score,
     classification_report,
+    confusion_matrix,
     f1_score,
     precision_score,
     recall_score,
+    roc_auc_score,
 )
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 RANDOM_STATE = 42
+OUTPUT_DIR = Path(__file__).parent / "results"
 
 
 def build_dataset(n=1500):
@@ -56,7 +62,7 @@ def build_dataset(n=1500):
 
 
 def main():
-    """Prepare data, compare models and print evaluation results."""
+    """Prepare data, compare models, report imbalance-aware metrics and export results."""
     df = build_dataset()
     X = pd.get_dummies(df.drop(columns="churn"), columns=["contract"], drop_first=True)
     y = df["churn"]
@@ -81,22 +87,35 @@ def main():
     for name, model in models.items():
         model.fit(X_train, y_train)
         predictions = model.predict(X_test)
-        results.append(
-            [
-                name,
-                accuracy_score(y_test, predictions),
-                precision_score(y_test, predictions, zero_division=0),
-                recall_score(y_test, predictions, zero_division=0),
-                f1_score(y_test, predictions, zero_division=0),
-            ]
-        )
+        probabilities = model.predict_proba(X_test)[:, 1]
+        row = {
+            "model": name,
+            "accuracy": accuracy_score(y_test, predictions),
+            "precision": precision_score(y_test, predictions, zero_division=0),
+            "recall": recall_score(y_test, predictions, zero_division=0),
+            "f1": f1_score(y_test, predictions, zero_division=0),
+            "roc_auc": roc_auc_score(y_test, probabilities),
+            "confusion_matrix": confusion_matrix(y_test, predictions).tolist(),
+        }
+        results.append(row)
         print(name)
         print(classification_report(y_test, predictions, digits=3))
 
-    comparison = pd.DataFrame(
-        results, columns=["Model", "Accuracy", "Precision", "Recall", "F1"]
-    ).sort_values("F1", ascending=False)
-    print(comparison.to_string(index=False))
+    comparison = pd.DataFrame(results).sort_values("f1", ascending=False)
+    print(comparison[["model", "accuracy", "precision", "recall", "f1", "roc_auc"]].to_string(index=False))
+
+    OUTPUT_DIR.mkdir(exist_ok=True)
+    payload = {
+        "dataset": {
+            "samples": int(df.shape[0]),
+            "features": int(df.shape[1]),
+            "churn_rate": float(y.mean()),
+            "random_state": RANDOM_STATE,
+        },
+        "models": results,
+    }
+    (OUTPUT_DIR / "model-results.json").write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    print(f"Saved {OUTPUT_DIR / 'model-results.json'}")
 
 
 if __name__ == "__main__":
