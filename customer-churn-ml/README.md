@@ -6,7 +6,7 @@ A reproducible classification study that generates a synthetic customer dataset 
 
 ## 🎯 Objective
 
-Identify customer characteristics associated with churn and compare baseline classification models using standard evaluation metrics.
+Identify customer characteristics associated with churn and compare baseline classification models using metrics that are useful for an imbalanced classification problem.
 
 ## 🔬 Workflow
 
@@ -17,11 +17,11 @@ Feature preparation + one-hot encoding
         ↓
 Stratified train/test split
         ↓
-Model training
+Model training + probability scoring
         ↓
-Accuracy / Precision / Recall / F1
+Accuracy / Precision / Recall / F1 / ROC-AUC
         ↓
-Model comparison
+Confusion-matrix + model comparison export
 ```
 
 ## 🤖 Models
@@ -31,6 +31,24 @@ Model comparison
 - Gradient Boosting
 
 The script generates 1,500 records and uses a fixed random seed for reproducibility.
+
+## 📊 Result Snapshot
+
+The synthetic dataset has a **13.8% churn rate**, so accuracy alone can be misleading. The current deterministic run reports:
+
+| Model | Accuracy | Precision | Recall | F1 | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | 0.867 | 0.600 | 0.073 | 0.130 | **0.743** |
+| Random Forest | 0.870 | 1.000 | 0.049 | 0.093 | 0.699 |
+| Gradient Boosting | 0.857 | 0.400 | 0.098 | **0.157** | 0.682 |
+
+![F1 comparison](results/f1-comparison.svg)
+
+Full metrics and confusion matrices are available in [`results/model-results.json`](results/model-results.json).
+
+## 💡 Analytics Takeaway
+
+The baseline models show why **class imbalance and decision thresholds matter** in churn work: the models achieve high accuracy while missing many churn cases. A production system should therefore tune thresholds and evaluate recall, F1, ROC-AUC and business cost rather than selecting a model by accuracy alone.
 
 ## 📊 Features
 
@@ -54,7 +72,7 @@ python -m pip install -r requirements.txt
 python train.py
 ```
 
-The script prints classification reports and a model-comparison table sorted by F1-score.
+The script prints classification reports, ROC-AUC and a model-comparison table, then refreshes `results/model-results.json`.
 
 ## 📁 Structure
 
@@ -62,6 +80,9 @@ The script prints classification reports and a model-comparison table sorted by 
 customer-churn-ml/
 ├── train.py
 ├── requirements.txt
+├── results/
+│   ├── model-results.json
+│   └── f1-comparison.svg
 └── README.md
 ```
 
@@ -70,3 +91,4 @@ customer-churn-ml/
 - Synthetic data is used instead of real customer records.
 - Model performance is illustrative and should not be treated as production performance.
 - No claim is made that the generated relationships represent any specific business.
+- Threshold tuning and cost-sensitive evaluation would be the next production-oriented step.
