@@ -1,71 +1,86 @@
 # Himanshu Sharma — Data Science & ML Portfolio
 
-> **Python • Data Science • Machine Learning • Data Analytics • Full Stack**
+> **Data Science • Machine Learning • Data Analytics • Python • SQL • Full Stack**
 
-Welcome to my portfolio workspace. This repository brings together practical analytics, machine-learning experiments, and application development projects built to demonstrate end-to-end problem solving.
+Welcome to my GitHub portfolio. This repository is the central hub for practical projects built around data analysis, machine learning, business-focused problem solving, and full-stack development.
 
-## 🚀 Featured Work
+## 👨‍💻 About Me
 
-| Project | Focus | Core Stack |
-|---|---|---|
-| 🧠 Cognitive Risk Classification | ML classification + PCA + model comparison | Python, Scikit-learn, XGBoost |
-| 📉 Customer Churn ML | End-to-end classification workflow | Python, Pandas, Scikit-learn |
-| 📊 Sales Analytics Engine | KPI, trend and business analysis | Python, Pandas, Matplotlib |
-| ❤️ Health Awareness App | Responsive health-information web app | HTML, CSS, JavaScript |
-| 🧩 Existing Management Apps | CRUD + database application practice | Python, SQLite |
+I am a Data Science student focused on turning data into useful insights and working solutions. My core interests include exploratory data analysis, machine learning, dashboard-driven analytics, Python development, SQL, and full-stack applications.
 
-## 🧠 What This Portfolio Demonstrates
+I prefer projects that show the complete workflow: **problem → data → preprocessing → analysis/model → evaluation → usable result**.
+
+## ⭐ Featured Projects
+
+| Project | Area | Stack | Highlights |
+|---|---|---|---|
+| 🧠 Cognitive Risk Classification | Machine Learning | Python, Scikit-learn, PCA | Preprocessing, dimensionality reduction, model comparison |
+| 📉 Customer Churn Prediction | Machine Learning | Python, Pandas, Scikit-learn | Classification pipeline and evaluation metrics |
+| ❤️ Health Awareness App | Full Stack | React, Node.js, Express, MongoDB, Docker | Responsive UI, REST API, database and containerization |
+| 📚 LIBTrack — Library Management | Python / Database | Python, SQLite, SQL | CRUD, issue/return workflow and history tracking |
+| 🏥 Pediatric Hospital Management | Frontend | HTML, CSS, JavaScript | Responsive healthcare workflow interface |
+| ✅ Smart Task Manager | Frontend | HTML, CSS, JavaScript | Task management with localStorage |
+
+## 🧠 Data Science & ML Skills
 
 - Exploratory Data Analysis (EDA)
-- Data cleaning and feature engineering
+- Data cleaning and preprocessing
+- Feature engineering
 - PCA and dimensionality reduction
-- Classification model comparison
-- Evaluation with accuracy, precision, recall, F1 and ROC-AUC where applicable
-- Business KPI and trend analysis
-- Data visualization
-- Front-end development
-- Database-backed application development
-- Git/GitHub project organization
+- Classification and model comparison
+- Accuracy, precision, recall and F1 evaluation
+- Data visualization and analytical reporting
+- Python, Pandas, NumPy, Matplotlib and Seaborn
+- Scikit-learn and XGBoost workflows
+- SQL and database fundamentals
 
 ## 🛠️ Technology Stack
 
 **Languages:** Python, SQL, Java, C++, C#, JavaScript  
-**Data:** Pandas, NumPy, Matplotlib, Seaborn, Excel, Power BI  
-**ML:** Scikit-learn, XGBoost, PCA, Logistic Regression, Random Forest  
+**Data & Analytics:** Pandas, NumPy, Matplotlib, Seaborn, Excel, Power BI, EDA  
+**Machine Learning:** Scikit-learn, XGBoost, PCA, Logistic Regression, Random Forest  
 **Web:** HTML, CSS, Bootstrap, JavaScript, Node.js, React.js, Express.js  
 **Databases:** MySQL, MongoDB, SQLite  
-**Tools:** Git, GitHub, Jupyter, VS Code
+**Dev Tools:** Git, GitHub, VS Code, Docker
 
 ## 📂 Repository Structure
 
 ```text
 health-awareness-app/
-├── alzheimer-ml/
-├── customer-churn-ml/
-├── sales-analytics/
-├── health-awareness-app/
-├── certificates/
-└── README.md
+├── alzheimer-ml/              # ML classification + PCA study
+├── customer-churn-ml/          # Customer churn classification workflow
+├── health-awareness-app/       # React + Node + MongoDB full-stack app
+├── certificates/               # Certificate index and credential notes
+└── README.md                   # Portfolio hub
 ```
 
-## 📜 Certifications
+## 📜 Certifications & Learning
 
-The certificate index contains only credentials for which source material is available. Current verified material includes:
+The [`certificates/`](certificates/) folder contains the credential index. Credentials are only presented as certificate files when the original source material is available and verifiable.
 
-- **Computational Theory: Language Principle & Finite Automata Theory** — Infosys Springboard, completed August 2, 2025.
-- Additional credentials listed on my CV include Cloud Computing (NPTEL, IIT Kharagpur), Introduction to Hardware and Operating Systems (IBM/Coursera), MERN Stack/DevOps/Cloud Computing training (CipherSchools), and Build-a-Thon participation. Their original certificate files will be added only when the source files are available.
+Current CV-listed credentials include:
 
-## ⚠️ Project Transparency
+- MERN Stack, DevOps & Cloud Computing — CipherSchools
+- Cloud Computing — NPTEL / IIT Kharagpur
+- Computational Theory — Language Principle & Finite Automata Theory — Infosys Springboard
+- Introduction to Hardware and Operating Systems — IBM / Coursera
+- Build-a-Thon Hackathon Participation
 
-Projects created specifically for this GitHub portfolio are presented as **personal/portfolio projects**. Synthetic or demonstration datasets are labelled accordingly. No company experience, credential, result, or dataset ownership is fabricated.
+## 🔎 Portfolio Principles
+
+- **Real code over inflated claims**
+- **Reproducible workflows over unexplained results**
+- **Synthetic/demo datasets are clearly labelled**
+- **No fabricated experience, credentials, metrics or ownership claims**
+- Each project should have a clear README, setup instructions and an understandable project structure.
 
 ## 📫 Connect
 
+- **LinkedIn:** [linkedin.com/in/himanshuu24](https://linkedin.com/in/himanshuu24)
+- **GitHub:** [github.com/Himanshusharma000](https://github.com/Himanshusharma000)
 - **Email:** himanshusharma10802@gmail.com
-- **LinkedIn:** linkedin.com/in/himanshuu24
-- **GitHub:** github.com/Himanshusharma000
 
 ---
 
-### ⭐ Goal
-Build practical, explainable and recruiter-ready projects that connect **data → models → insights → usable applications**.
+### 🎯 Goal
+Build recruiter-ready projects that connect **data → models → insights → applications** and demonstrate practical problem-solving.
